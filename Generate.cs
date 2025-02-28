@@ -93,6 +93,8 @@ namespace CADgeneration
 
 
 
+        // Extrude the 2D sketch to create a 3D feature
+
         public static string? ExtrudeSketch(this ModelDoc2 modelDoc, string sketchName, double extrudeDepth)
         {
             // Select the sketch by name
@@ -129,11 +131,45 @@ namespace CADgeneration
                 false       // Use auto select
             );
 
-
-
-
-
             return null;
+        }
+
+
+
+
+
+        // Add a hole wizard tapped hole to the model
+
+        public static bool AddHoleWizardTappedHole(this ModelDoc2 modelDoc, double x, double y, double z, string holeStandard, string holeType, string holeSize, double depth)
+        {
+
+
+            // Select the face where the hole will be created
+            bool isSelected = modelDoc.Extension.SelectByRay(x, y, z, 0, 0, -1, 0.01, 2, false, 0, 0);
+            if (!isSelected)
+            {
+                Console.WriteLine("Error: Could not select the face for the hole.");
+                return false;
+            }
+
+            // Get the hole wizard feature data
+            HoleWizardData holeWizardData = (HoleWizardData)modelDoc.FeatureManager.CreateDefinition((int)swFeatureNameID_e.swFmHoleWzd);
+            holeWizardData.HoleType = (int)swHoleWizardTypes_e.swTapHole;
+            holeWizardData.Standard = holeStandard;
+            holeWizardData.HoleType = holeType;
+            holeWizardData.Size = holeSize;
+            holeWizardData.Depth = depth;
+
+            // Create the hole wizard feature
+            Feature holeFeature = modelDoc.FeatureManager.CreateFeature(holeWizardData);
+            if (holeFeature == null)
+            {
+                Console.WriteLine("Error: Failed to create the hole wizard tapped hole.");
+                return false;
+            }
+
+            Console.WriteLine("Hole wizard tapped hole created successfully.");
+            return true;
         }
 
 
@@ -216,9 +252,7 @@ namespace CADgeneration
 
 
 
-
-
-
+        // GENERATE CLASS UTILITIES
 
 
         // Function to check if all points are coplanar

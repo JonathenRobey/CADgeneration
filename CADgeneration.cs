@@ -21,6 +21,7 @@ namespace SolidWorksAutomation
 
 
             // Start a new instance of SolidWorks
+
             try
             {
                 Console.WriteLine("Starting SolidWorks...");
@@ -63,7 +64,9 @@ namespace SolidWorksAutomation
 
 
 
-            
+            //             Main code block to generate CAD
+            //******************************************
+
             if (started)
             {
                 // Create the new document using template
@@ -89,49 +92,11 @@ namespace SolidWorksAutomation
                 modelDoc.ExtrudeSketch(sketch1, depth);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            // Need to add code to save the model and close the SW application
 
 
 
@@ -141,10 +106,6 @@ namespace SolidWorksAutomation
             // Wait for user input before closing
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
-
-
-
-
 
         }
     }
