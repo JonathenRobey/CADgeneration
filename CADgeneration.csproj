@@ -1,0 +1,146 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+    <StartupObject>SolidWorksAutomation.CADgeneration</StartupObject>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="SwCommands">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>32</VersionMajor>
+      <Guid>0ac1de9f-3fbc-4c25-868d-7d4e9139cce0</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SwConst">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>32</VersionMajor>
+      <Guid>4687f359-55d0-4cd3-b6cf-2eb42c11f989</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SwDimXpert">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>32</VersionMajor>
+      <Guid>582d0d5b-ff58-42cd-8968-a8a001a52454</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SWPublished">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>32</VersionMajor>
+      <Guid>c71c31cd-898c-11d4-aef6-00c04f603faf</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SolidWorks">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>32</VersionMajor>
+      <Guid>801a0000-a66c-11d3-a8bd-0000861ebbd6</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SwMotionStudy">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>32</VersionMajor>
+      <Guid>45db5211-f358-4b5e-a235-e792eb818baa</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SWRoutingLib">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>32</VersionMajor>
+      <Guid>6dd4b124-4733-4dff-97a8-52f70924d514</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="CAMWORKSLib">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>23</VersionMajor>
+      <Guid>fe488661-0bd8-11d6-2012-2018ce99e55f</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="7.5.2" />
+    <PackageReference Include="Interop.UIAutomationClient" Version="10.19041.0" />
+    <PackageReference Include="SolidWorks.Interop.sldworks" Version="32.1.0" />
+    <PackageReference Include="SolidWorks.Interop.swconst" Version="32.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SolidWorks.Interop.cosworks">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.cosworks.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.dsgnchk">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.dsgnchk.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.fworks">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.fworks.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.gtswutilities">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.gtswutilities.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.sldcostingapi">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.sldcostingapi.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.sldtoolboxconfigureaddin">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.sldtoolboxconfigureaddin.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.sldworks">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.sldworks.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.sustainability">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.sustainability.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.sw3dprinter">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.sw3dprinter.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swbrowser">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.swbrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swcommands">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.swcommands.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swconst">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.swconst.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swdimxpert">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.swdimxpert.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swdocumentmgr">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.swdocumentmgr.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swmotionstudy">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.swmotionstudy.dll</HintPath>
+    </Reference>
+    <Reference Include="SolidWorks.Interop.swpublished">
+      <HintPath>..\..\..\..\..\CADgeneration Files\SOLIDWORKS Corp\SOLIDWORKS\api\redist\SolidWorks.Interop.swpublished.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

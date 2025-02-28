@@ -1,0 +1,2 @@
+C:\Users\jrobey\source\repos\CheckMBD_Solidworks\bin\Release\net8.0\win-x64\app.publish\CheckMBD_Solidworks.pdb
+C:\Users\jrobey\source\repos\CheckMBD_Solidworks\bin\Release\net8.0\win-x64\app.publish\CheckMBD_Solidworks.exe
