@@ -13,7 +13,7 @@ namespace CADgeneration
         public static string? NewSketch(this ModelDoc2 modelDoc, List<Tuple<double, double, double>> points)
         {
             /*
-             * Used to create a sketch with only coordinates
+             * Used to create a 2D sketch with only coordinates
              */
           
             Console.WriteLine("Checking if points lie on the same plane...");
@@ -140,6 +140,7 @@ namespace CADgeneration
 
         // Add a hole wizard tapped hole to the model
 
+        /*
         public static bool AddHoleWizardTappedHole(this ModelDoc2 modelDoc, double x, double y, double z, string holeStandard, string holeType, string holeSize, double depth)
         {
 
@@ -172,7 +173,7 @@ namespace CADgeneration
             return true;
         }
 
-
+        */
 
 
 
@@ -287,8 +288,29 @@ namespace CADgeneration
             return false;
         }
 
+        /*
+        private static List<Face2> GetFacesAtCoordinate(this ModelDoc2 modelDoc, double x, double y, double z)
+        {
+            List<Face2> faces = new List<Face2>();
+            double[] rayDir = { 0, 0, -1 };
+            double rayRadius = 0.01;
+            int faceCount = modelDoc.Extension.GetRayIntersections(x, y, z, rayDir[0], rayDir[1], rayDir[2], rayRadius, out object[] faceArray);
 
+            if (faceCount > 0)
+            {
+                foreach (object faceObj in faceArray)
+                {
+                    if (faceObj is Face2 face)
+                    {
+                        faces.Add(face);
+                    }
+                }
+            }
 
+            return faces;
+        }
+
+        */
 
 
 

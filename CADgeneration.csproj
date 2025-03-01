@@ -88,6 +88,7 @@
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="7.5.2" />
     <PackageReference Include="Interop.UIAutomationClient" Version="10.19041.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="SolidWorks.Interop.sldworks" Version="32.1.0" />
     <PackageReference Include="SolidWorks.Interop.swconst" Version="32.1.0" />
   </ItemGroup>

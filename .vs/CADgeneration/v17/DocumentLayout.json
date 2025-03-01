@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Workarea\\C#\\Solidworks\\CADgeneration\\",
+  "WorkspaceRootPath": "C:\\WorkArea\\CADgeneration\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB24CB7F-5B03-421A-8CBD-35919E24B674}|CADgeneration.csproj|c:\\workarea\\c#\\solidworks\\cadgeneration\\cadgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FB24CB7F-5B03-421A-8CBD-35919E24B674}|CADgeneration.csproj|c:\\workarea\\cadgeneration\\cadgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB24CB7F-5B03-421A-8CBD-35919E24B674}|CADgeneration.csproj|solutionrelative:cadgeneration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB24CB7F-5B03-421A-8CBD-35919E24B674}|CADgeneration.csproj|c:\\workarea\\c#\\solidworks\\cadgeneration\\generate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FB24CB7F-5B03-421A-8CBD-35919E24B674}|CADgeneration.csproj|c:\\workarea\\cadgeneration\\generate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB24CB7F-5B03-421A-8CBD-35919E24B674}|CADgeneration.csproj|solutionrelative:generate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "CADgeneration.cs",
-              "DocumentMoniker": "C:\\Workarea\\C#\\Solidworks\\CADgeneration\\CADgeneration.cs",
+              "DocumentMoniker": "C:\\WorkArea\\CADgeneration\\CADgeneration.cs",
               "RelativeDocumentMoniker": "CADgeneration.cs",
-              "ToolTip": "C:\\Workarea\\C#\\Solidworks\\CADgeneration\\CADgeneration.cs",
+              "ToolTip": "C:\\WorkArea\\CADgeneration\\CADgeneration.cs",
               "RelativeToolTip": "CADgeneration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAUwJ8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T21:49:51.068Z",
               "IsPinned": true,
@@ -38,13 +38,14 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Generate.cs",
-              "DocumentMoniker": "C:\\Workarea\\C#\\Solidworks\\CADgeneration\\Generate.cs",
+              "DocumentMoniker": "C:\\WorkArea\\CADgeneration\\Generate.cs",
               "RelativeDocumentMoniker": "Generate.cs",
-              "ToolTip": "C:\\Workarea\\C#\\Solidworks\\CADgeneration\\Generate.cs",
+              "ToolTip": "C:\\WorkArea\\CADgeneration\\Generate.cs",
               "RelativeToolTip": "Generate.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAADwv4UAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAQwFMAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T13:57:21.256Z"
+              "WhenOpened": "2025-02-27T13:57:21.256Z",
+              "EditorCaption": ""
             }
           ]
         }

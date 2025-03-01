@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\bin",
+    "\\obj",
+    "\\Properties",
+    "\\Properties\\PublishProfiles"
   ],
   "SelectedNode": "\\CADgeneration.cs",
   "PreviewInSolutionExplorer": false

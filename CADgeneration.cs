@@ -6,6 +6,8 @@ using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using System.Runtime.InteropServices;
 using CADgeneration;
+using Newtonsoft.Json;
+
 
 namespace SolidWorksAutomation
 {
@@ -14,19 +16,70 @@ namespace SolidWorksAutomation
         static void Main(string[] args)
         {
 
+
+
+            // Load the JSON file
+            var specs = LoadJsonFile("C:\\WorkArea\\CADgeneration\\spec.json");
+            double length = 0.0;
+            double width = 0.0;
+            double height = 0.0;
+
+            // Example usage of the parsed JSON data
+            foreach (var spec in specs)
+            {
+                foreach (var kvp in spec)
+                {
+                    if (kvp.Key == "attributes")
+                    {
+
+                        
+                        foreach (var kvp2 in kvp1)
+                        {
+                            if (kvp2.Key == "length")
+                            {
+                                length += Convert.ToDouble(kvp2.Value);
+                            }
+                            else if (kvp2.Key == "width")
+                            {
+                                width += Convert.ToDouble(kvp2.Value);
+                            }
+                            else if (kvp2.Key == "height")
+                            {
+                                height += Convert.ToDouble(kvp2.Value);
+                            }
+                        }
+                    }
+
+
+                }
+
+
+
+
+            }
+
+
+            double voluem = length * width * height;
+            Console.WriteLine($"Volume of the box is {voluem} cubic mm");
+
+
+
+
+
+            /*
             // Parameters
             SldWorks swApp = null;
             ModelDoc2 modelDoc = null;
             bool started = false;
-
+            */
 
             // Start a new instance of SolidWorks
-
+            /*
             try
             {
                 Console.WriteLine("Starting SolidWorks...");
 
-                /*
+                
                  * How to specify a version if needed
                  * SolidWorks 2024	"SldWorks.Application.32"
                  * SolidWorks 2023	"SldWorks.Application.31"
@@ -35,7 +88,7 @@ namespace SolidWorksAutomation
                  * SolidWorks 2020	"SldWorks.Application.28"
                  * SolidWorks 2019	"SldWorks.Application.27"
                  * SolidWorks 2018	"SldWorks.Application.26" 
-                 */
+                 
 
 
                 swApp = Activator.CreateInstance(Type.GetTypeFromProgID("SldWorks.Application")) as SldWorks;
@@ -64,9 +117,12 @@ namespace SolidWorksAutomation
 
 
 
-            //             Main code block to generate CAD
-            //******************************************
 
+
+            */
+            //      Main code block to generate CAD
+            //******************************************
+            /*
             if (started)
             {
                 // Create the new document using template
@@ -77,9 +133,9 @@ namespace SolidWorksAutomation
                 var boxPoints = new List<Tuple<double, double, double>>
                 {
                     Tuple.Create(0.0, 0.0, 0.0),      // Bottom-left corner
-                    Tuple.Create(0.1, 0.0, 0.0),    // Bottom-right corner
-                    Tuple.Create(0.1, 0.05, 0.0),   // Top-right corner
-                    Tuple.Create(0.0, 0.05, 0.0),     // Top-left corner
+                    Tuple.Create(550, 0.0, 0.0),    // Bottom-right corner
+                    Tuple.Create(550, 800, 0.0),   // Top-right corner
+                    Tuple.Create(0, 800, 0.0),     // Top-left corner
                     Tuple.Create(0.0, 0.0, 0.0)       // Closing back to the first point
                 };
 
@@ -88,11 +144,18 @@ namespace SolidWorksAutomation
                 string sketch1 = modelDoc.NewSketch(boxPoints);
 
                 // Extrude Sketch
-                double depth = 0.05;
+                double depth = 50;
                 modelDoc.ExtrudeSketch(sketch1, depth);
 
+            // translate object
 
             }
+
+
+            
+
+
+
 
 
 
@@ -101,12 +164,23 @@ namespace SolidWorksAutomation
 
 
 
-
-
-            // Wait for user input before closing
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+            */
 
         }
+        private static List<Dictionary<string, object>> LoadJsonFile(string filePath)
+        {
+            try
+            {
+                string jsonContent = File.ReadAllText(filePath);
+                var list = JsonConvert.DeserializeObject<List<Dictionary<string, object>>>(jsonContent);
+                return list ?? new List<Dictionary<string, object>>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error reading JSON file: {ex.Message}");
+                return new List<Dictionary<string, object>>();
+            }
+        }
+
     }
 }
